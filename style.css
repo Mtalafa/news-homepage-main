@@ -1,0 +1,304 @@
+/* Colors */
+
+:root {
+  --main-1: hsl(5, 85%, 63%);
+  --main-2: hsl(35, 77%, 62%);
+  --text-color-1: hsl(36, 100%, 99%);
+  --text-color-2: hsl(236, 13%, 42%);
+  --number--aside-text: hsl(233, 8%, 79%);
+  --background: hsl(240, 100%, 5%);
+  --menu-background: #fff;
+}
+
+/* General rules  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  max-width: 144rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.text {
+  color: var(--text-color-2);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.nav,
+.grid-container,
+.bottom-articles {
+  max-width: 111rem;
+  margin: 0 2rem;
+}
+
+.main-header,
+.bottom-article-header {
+  font-weight: 800;
+}
+
+.aside-text,
+.number-header {
+  color: var(--number--aside-text);
+}
+
+.btn,
+.aside-header {
+  color: var(--text-color-1);
+}
+
+.main-img,
+.secondary-img {
+  width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.open {
+  background-color: var(--menu-background);
+  width: 70%;
+  height: 100vh;
+  padding-top: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  flex-direction: column;
+}
+
+/* Navigation */
+
+.nav {
+  margin: 0 auto;
+  padding: 8.8rem 0 5.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links,
+.open {
+  font-size: 1.6rem;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 3.8rem;
+}
+
+.link:link,
+.link:visited {
+  color: var(--text-color-2);
+  text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+  color: var(--main-1);
+  transition: all 0.25s;
+}
+
+.nav-btn {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  z-index: 10;
+}
+
+.nav-btn:hover,
+.close-btn:hover {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+/* Top */
+
+.grid-container {
+  margin: 0 auto 7rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.6fr;
+  grid-row-gap: 3.3rem;
+  grid-column-gap: 3rem;
+}
+
+.main-img-box {
+  max-width: 73rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.main-header {
+  font-size: 5.6rem;
+  grid-row-start: 2;
+}
+
+.grid-item {
+  grid-row-start: 2;
+  grid-column-start: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.btn {
+  max-width: 18.5rem;
+  background-color: var(--main-1);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 4.8px;
+  border: none;
+  padding: 1.7rem 0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--background);
+  transition: all 0.25s;
+}
+
+.aside {
+  background-color: var(--background);
+  padding: 3.4rem 2.4rem;
+  grid-column-start: 3;
+  grid-row-end: span 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.aside-main-header {
+  color: var(--main-2);
+  font-size: 4rem;
+}
+
+.aside-article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.aside-header {
+  font-size: 2rem;
+}
+
+.aside-text {
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+.underline {
+  height: 0px;
+  border: none;
+  border-top: 1px solid var(--text-color-2);
+}
+
+/* Bottom */
+
+.bottom-articles {
+  margin: 0 auto;
+
+  display: flex;
+  gap: 3rem;
+}
+
+.bottom-article {
+  max-width: 35rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  gap: 2.5rem;
+}
+
+.secondary-img-box {
+  max-width: 10rem;
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.number-header {
+  font-size: 3rem;
+}
+
+.bottom-article-header {
+  font-size: 1.8rem;
+}
+
+.bottom-article-header:hover {
+  cursor: pointer;
+  color: var(--main-1);
+  transition: all 0.25s;
+}
+
+@media screen and (max-width: 1150px) {
+  .main-img,
+  .secondary-img {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav,
+  .aside,
+  .grid-container,
+  .bottom-articles {
+    max-width: 70rem;
+  }
+
+  .main-img,
+  .secondary-img {
+    height: auto;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottom-articles {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .nav {
+    position: relative;
+    padding: 3rem 0 2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-btn {
+    display: block;
+    border: none;
+  }
+}
